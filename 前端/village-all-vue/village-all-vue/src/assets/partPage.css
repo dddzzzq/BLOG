@@ -1,0 +1,36 @@
+.notice-page{
+    width: 100%;
+    background-color: #f1f1f1;
+    margin: 20px 0;
+    padding: 20px 0;
+    min-height: 1200px;
+}
+.page-title {
+    text-align: center;
+    font-size: 36px;
+    color: #d32121;
+    line-height: 60px;
+    font-family: Arial, 黑体;
+}
+.page-border {
+    border-bottom: 2px solid #aaaaaa;
+    margin: 20px 25px 0px;
+
+}
+.page-brief {
+    border: 1px solid #bbbbbb;
+    margin: 10px 25px;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-family: Arial, 宋体;
+    line-height: 30px;
+}
+.page-times,
+.page-name {
+    font-size: 18px;
+    font-family: Arial, 黑体;
+}
+.page-content {
+    margin: 10px 30px;
+    line-height: 30px;
+}

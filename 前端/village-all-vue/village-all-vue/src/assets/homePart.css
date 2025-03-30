@@ -1,0 +1,9 @@
+.home-part-title {
+    font-size: 30px;
+    line-height: 70px;
+    height: 70px;
+    background: linear-gradient(to right, #C34A36, #D99586, #ffffff);;
+    width: 300px;
+    color: #ffffff;
+    padding-left: 20px;
+}

@@ -1,0 +1,26 @@
+.list {
+    height: 1400px;
+}
+.list-item {
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: Arial, 宋体;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item-title {
+    min-width: 360px;
+    width: calc(100% - 160px);
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.item-title:hover {
+    color: #d32121;
+    cursor: pointer;
+}
+.item-publishTime {
+    width: 140px;
+    text-align: right;
+}

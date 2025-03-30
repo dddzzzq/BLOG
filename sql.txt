@@ -1,0 +1,114 @@
+先创建一个名字为blog的架构，然后执行下列语句
+
+
+create table activity
+(
+    id      int auto_increment comment 'ID'
+        primary key,
+    name    varchar(255)  null comment '活动名称',
+    descr   varchar(1000) null comment '活动简介',
+    content longtext      null comment '活动内容',
+    start   varchar(255)  not null comment '开始时间',
+    end     varchar(255)  null comment '结束时间',
+    form    varchar(255)  null comment '活动形式',
+    address varchar(255)  null comment '活动地址',
+    host    varchar(255)  null comment '主办方',
+    `read`  int default 0 null comment '浏览量',
+    cover   varchar(255)  null comment '封面'
+)
+    comment '活动' collate = utf8mb4_unicode_ci;
+	
+create table blog
+(
+    id        int auto_increment comment 'ID'
+        primary key,
+    title     varchar(255)  null comment '标题',
+    content   longtext      null comment '内容',
+    descr     varchar(255)  null comment '简介',
+    cover     varchar(255)  null comment '封面',
+    tags      varchar(255)  null comment '标签',
+    uid       int           null comment '发布人ID',
+    date      varchar(255)  null comment '发布日期',
+    cid       int           null comment '分类ID',
+    star      int default 0 null,
+    likeCount int default 0 null,
+    readCount int default 0 null
+)
+    comment '博客信息' collate = utf8mb4_unicode_ci;
+
+create table category
+(
+    id   int auto_increment comment 'ID'
+        primary key,
+    name varchar(255) null comment '分类名称'
+)
+    comment '博客分类' collate = utf8mb4_unicode_ci;
+	
+create table collect
+(
+    id     int auto_increment comment 'ID'
+        primary key,
+    fid    int          null comment '关联ID',
+    uid    int          null comment '点赞人ID',
+    module varchar(255) null comment '模块'
+)
+    comment '收藏' collate = utf8mb4_unicode_ci;
+	
+create table comment
+(
+    id      int auto_increment comment 'ID'
+        primary key,
+    content varchar(500) null comment '内容',
+    uid     int          null comment '评论人',
+    pid     int          null comment '父级ID',
+    rid     int          null comment '根节点ID',
+    time    varchar(255) null comment '评论时间',
+    fid     int          null comment '关联ID',
+    module  varchar(255) null comment '模块'
+)
+    comment '评论表' collate = utf8mb4_unicode_ci;
+	
+create table likes
+(
+    id     int auto_increment comment 'ID'
+        primary key,
+    fid    int          null comment '关联ID',
+    uid    int          null comment '点赞人ID',
+    module varchar(255) null comment '模块'
+)
+    comment '点赞' collate = utf8mb4_unicode_ci;
+	
+create table sign
+(
+    id         int auto_increment
+        primary key,
+    activityId int          null,
+    userId     int          null,
+    time       varchar(255) null
+);
+create table upload
+(
+    id       int auto_increment
+        primary key,
+    src      varchar(255) null,
+    username varchar(255) null
+);
+create table user
+(
+    id        int auto_increment comment 'ID'
+        primary key,
+    username  varchar(255) null comment '用户名',
+    password  varchar(255) null comment '密码',
+    name      varchar(255) null comment '姓名',
+    avatar    varchar(255) null comment '头像',
+    time      varchar(200) null,
+    authority varchar(255) null comment '角色标识',
+    sex       varchar(255) null comment '性别',
+    phone     varchar(255) null comment '电话',
+    info      varchar(255) null comment '简介',
+    school    varchar(255) null,
+    place     varchar(255) null,
+    constraint username
+        unique (username)
+)
+    comment '用户信息' collate = utf8mb4_unicode_ci;
